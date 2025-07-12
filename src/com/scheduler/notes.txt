@@ -1,0 +1,23 @@
+Strategy Design Pattern
+
+Design a modular Java-based system to schedule meetings across multiple rooms, ensuring no time conflicts and allowing flexible room allocation strategies.
+
+com.scheduler
+├── model         → Core entities: Meeting, TimeSlot, Room
+├── service       → SchedulerService (main engine)
+├── interfaces    → Strategy abstraction (ISchedulingStrategy)
+├── strategy      → Strategy implementation (FirstAvailableRoom)
+├── Main.java     → User-interactive driver
+
+
+| Component                    | Location        | Purpose                                 |
+| ---------------------------- | --------------- | --------------------------------------- |
+| `TimeSlot`                   | `model`         | Represents a time interval              |
+| `Meeting`                    | `model`         | Wraps meeting title + time              |
+| `MeetingRoom`                | `model`         | Maintains meetings & availability check |
+| `ISchedulingStrategy`        | `interfaces`    | Interface to support custom logic       |
+| `FirstAvailableRoomStrategy` | `strategy`      | First-fit room selection logic          |
+| `SchedulerService`           | `service`       | Core engine for booking & output        |
+| `Main.java`                  | `com.scheduler` | User interaction (input/output)         |
+
+
